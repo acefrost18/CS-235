@@ -1,19 +1,15 @@
 #include "Book.hpp"
 
 Book::Book() {
-    
-    bookTitle = "";
-    author = "";
-    pageCount = 0;
-    digitalFlag = false;
-
 }
 
-Book::Book(string bookTitle,string author,int pageCount,bool digitalFlag) {
+Book::Book(const string bookTitle,const string author,const int pageCount,bool digitalFlag) {
+    
     setTitle(bookTitle);
     setAuthor(author);
     setPageCount(pageCount);
-    setDigital(digitalFlag);
+    this->digitalFlag = digitalFlag;
+
 }
 
 void Book::setTitle(string bookTitle) {
@@ -21,15 +17,21 @@ void Book::setTitle(string bookTitle) {
 }
 
 void Book::setPageCount(int pageCount) {
-    this->pageCount = pageCount;
+    if(pageCount > 0) {
+        this->pageCount = pageCount;
+    }
+    
+    else {
+        this->pageCount = 0;
+    }
 }
 
 void Book::setAuthor(string author) {
     this->author = author;
 }
 
-void Book::setDigital(bool digitalFlag) {
-    this->digitalFlag = digitalFlag;
+void Book::setDigital() {
+    this->digitalFlag = true;
 }
 
 string Book::getTitle() {

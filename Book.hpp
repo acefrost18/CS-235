@@ -16,14 +16,14 @@ class Book {
         bool digitalFlag;
     public:
         Book();
-        Book(string bookTitle,string author,int pageCount,bool digitalFlag);
+        Book(const string bookTitle,const string author,const int pageCount,bool digitalFlag = false);
         void setTitle(string bookTitle);
         string getTitle();
         void setAuthor(string author);
         string getAuthor();
         void setPageCount(int pageCount);
         int getPageCount();
-        void setDigital(bool digitalFlag);
+        void setDigital();
         bool isDigital();
 };
 #endif
