@@ -20,10 +20,6 @@ void Book::setPageCount(int pageCount) {
     if(pageCount > 0) {
         this->pageCount = pageCount;
     }
-    
-    else {
-        this->pageCount = 0;
-    }
 }
 
 void Book::setAuthor(string author) {
